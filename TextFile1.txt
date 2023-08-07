@@ -1,0 +1,18 @@
+﻿Create a console application in c# (try to use .net core)
+This should keep on running unless closed explicitly. 
+
+It should monitor a folder c:\temp
+As soon as a file names Trades.csv is dropped there it reads the file, 
+saves the data in a table named Trade and 
+moves the file in c:\temp\archive folder with timestamp appended to the file name
+
+Below is sample structure of Trades.csv
+TradeID, ISIN, Notional
+MX1345,IB1000,800
+MX1346,IB2000,600
+
+Use SQLLite for the backend and entity framework to persist the data to the table.
+
+The process should be logged to file using serilog. Try to use dependency injection.
+
+We can have multiple file delivery at regular interval. When a new file comes the old data in the Trade table should be deleted
